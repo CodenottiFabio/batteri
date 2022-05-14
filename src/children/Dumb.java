@@ -2,6 +2,7 @@ package children;
 import main.Food;
 public class Dumb extends main.Batterio{
     private boolean goDown;
+
     public Dumb() {
         goDown = true;
     }

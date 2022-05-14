@@ -86,7 +86,7 @@ public class mainForm extends javax.swing.JFrame {
                 Food.getHeight() + ALTEZZA_BORDO
         );
         //Timer per l'aggiornamento della simulazione
-        timerUpdateSimulation = new Timer(50, (ActionEvent e) -> {
+        timerUpdateSimulation = new Timer(1, (ActionEvent e) -> {
             //20 aggiornmenti a secondo
             //necessario per evitare che riparta un ciclo
             // di ridisegno del campo gara mentre ne è già in corso uno
