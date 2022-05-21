@@ -98,6 +98,7 @@ public class Code extends main.Batterio{
 
     }
 
+    //per clonarlo
     @Override
     public main.Batterio clone() throws CloneNotSupportedException {
         Code clone = (Code) super.clone();
