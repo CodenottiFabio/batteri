@@ -4,6 +4,7 @@ import main.Food;
 
 public class Code extends main.Batterio{
 
+    //attributi
     public boolean godown;
     public boolean goright;
     public boolean ultima;
