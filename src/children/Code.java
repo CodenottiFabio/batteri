@@ -28,6 +28,7 @@ public class Code extends main.Batterio{
         trovata = false;
     }
 
+    //per spostarlo
     @Override
     protected void move(){
 
