@@ -12,6 +12,7 @@ public class Code extends main.Batterio{
     public int obbx;
     public int obby;
     public boolean trovata;
+    private boolean obbliquo;
 
     public Code() {
         if (Math.random()%2 == 1){
@@ -27,6 +28,7 @@ public class Code extends main.Batterio{
         obbx = -1;
         obby = -1;
         trovata = false;
+        obbliquo = false;
     }
 
     //per spostarlo
@@ -45,6 +47,18 @@ public class Code extends main.Batterio{
                 }
                  if (Food.isFood(x + i, y + j)){
                     obbx = this.getX() + i;
+                    obby = this.getY() + j;
+                    trovata = true;
+                    break;
+                }
+                if (Food.isFood(x + i, y - j)){
+                    obbx = this.getX() + i;
+                    obby = this.getY() - j;
+                    trovata = true;
+                    break;
+                }
+                if (Food.isFood(x - i, y + j)){
+                    obbx = this.getX() - i;
                     obby = this.getY() + j;
                     trovata = true;
                     break;
@@ -77,7 +91,17 @@ public class Code extends main.Batterio{
             if (x < 0) {
                 goright = true;
             }
-            if (ultima) {
+            if (obbliquo){
+                if (godown)
+                    y++;
+                else
+                    y--;
+                if (goright)
+                    x++;
+                else
+                    x--;
+            }
+            else if (ultima) {
                 if (godown)
                     y++;
                 else
@@ -106,7 +130,12 @@ public class Code extends main.Batterio{
         Code clone = (Code) super.clone();
         clone.x = (int)(Math.random() % Food.getWidth());
         clone.y = (int)(Math.random() % Food.getHeight());
-        clone.ultima = !ultima;
+        if ((int)(Math.random() %2) == 0){
+            clone.ultima = !ultima;
+            clone.obbliquo = false;
+        }
+        else
+            clone.obbliquo = true;
         return clone;
     }
 }
